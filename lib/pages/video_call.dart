@@ -1,5 +1,4 @@
 import 'package:dating_app/widgets/1to1videocall.dart';
-import 'package:dating_app/widgets/call_functions.dart';
 import 'package:flutter/material.dart';
 
 class CallPage extends StatefulWidget {
@@ -11,8 +10,10 @@ class CallPage extends StatefulWidget {
 }
 
 class _CallPageState extends State<CallPage> {
+  
   @override
   Widget build(BuildContext context) {
+    print(widget.channelName);
     return Scaffold(
       backgroundColor: Color(0xFFFFDBD6),
       extendBodyBehindAppBar: true,
@@ -30,16 +31,9 @@ class _CallPageState extends State<CallPage> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          VideoCall(widget.channelName),
-          Positioned(
-            bottom: 20,
-            child: CallFunctions(),
-          )
-        ],
-      ),
-    );
+      body:VideoCall(widget.channelName),
+        
+      );
+    
   }
 }
